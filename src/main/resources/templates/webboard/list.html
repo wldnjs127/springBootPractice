@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/layout1}">
+<head>
+<meta charset="UTF-8">
+<title>야호</title>
+	<style>
+		@font-face {
+		    font-family: 'Yeongdo-Rg';
+		    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/Yeongdo-Rg.woff') format('woff');
+		    font-weight: normal;
+		    font-style: normal;
+		}
+		
+		*{
+		 	 font-family: 'Yeongdo-Rg';
+		}
+		
+		table,th,tr,td{
+			margin-top : 30px;
+			padding : 10px;
+			border : 1px solid;
+			border-collapse : collapse;
+		}
+		.hotpink{
+			color: white;
+			background-color: red;
+		}
+		
+		.skyblue{
+			color: white;
+			background-color: green;
+		}
+		.first{
+		        color: gold;
+		    }
+		.last{
+		       color: silver;
+		   }
+		  
+		 a{
+		 	color: white;
+		 }
+	</style>
+</head>
+<body>
+    <!-- 하위 HTML에서 content 재정의할 예정 -->
+    <div class="panel panel-default" layout:fragment="content">
+       <table>
+		<tr>
+			<th>bno</th>
+			<th>title</th>
+			<th>writer</th>
+			<th>content</th>
+			<th>regdate</th>
+			<th>updatedate</th>
+			<th>replies</th>
+			<th></th>
+			<th>delete</th>
+		</tr>
+		<tr th:each="board,status2:${blist}" th:class="${status2.even?'hotpink':'skyblue'}">
+		<!--/* ${board.replies.size}로 하면 여러번 불러오므로 lists로 해야한다 */-->
+			<td th:text="|${board.bno} ${#lists.size(board.replies)}|"></td>
+			<td th:text="${board.title}"></td>
+			<td th:text="${board.writer}"></td>
+			<td th:text="${board.content}"></td>
+			<td th:text="${board.regdate}"></td>
+			<td th:text="${board.updatedate}"></td>
+			<td><p th:text="${#lists.size(board.replies)}"></p></td>
+			<td><a th:href="@{/webboard/detail.do(bno=${board.bno})}">바로가기</a></td>
+			<td><a th:href="@{/webboard/delete.do(bno=${board.bno})}">삭제하기</a></td>
+		</tr>
+		</table>
+    </div>
+    <th:block layout:fragment="script1">
+    	<script th:inline="javascript">
+    		var message = eval('[[${message}]]');
+    		console.log(message);
+    		if(message!=null){
+    			console.log('1223',message);
+    			alert(message);
+    		}
+  
+    	</script>
+    </th:block>
+</body>
+</html>

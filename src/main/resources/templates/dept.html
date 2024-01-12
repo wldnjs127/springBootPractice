@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/layout1}">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!--/* <header th:replace="fragments/header :: header2"></header>
+<footer th:replace="fragments/footer.html :: footer2"></footer> */-->
+	<table border="1px">
+		<tr>
+			<td>departmentId</td>
+			<td>departmentName</td>
+			<td>managerId</td>
+			<td>locationId</td>
+		</tr>
+		<tr th:each="dept:${dlist}">
+			<td th:text="${dept.departmentId}"></td>
+			<td th:text="${dept.departmentName}"></td>
+			<td th:text="${dept.managerId}"></td>
+			<td th:text="${dept.locationId}"></td>
+		</tr>
+	</table>
+	
+	<table border="1px">
+		<tr>
+			<td>employeeId</td>
+			<td>firstName</td>
+			<td>lastName</td>
+			<td>email</td>
+			<td>phoneNumber</td>
+			<td>hireDate</td>
+			<td>jobId</td>
+			<td>salary</td>
+			<td>commissionPct</td>
+			<td>managerId</td>
+			<td>departmentId</td>
+		</tr>
+		<tr th:each="emp:${elist}">
+			<td th:text="${emp.employeeId}"></td>
+			<td th:text="${emp.firstName}"></td>
+			<td th:text="${emp.lastName}"></td>
+			<td th:text="${emp.email}"></td>
+			<td th:text="${emp.phoneNumber}"></td>
+			<td th:text="${emp.hireDate}"></td>
+			<td th:text="${emp.jobId}"></td>
+			<td th:text="${emp.salary}"></td>
+			<td th:text="${emp.commissionPct}"></td>
+			<td th:text="${emp.managerId}"></td>
+			<td th:text="${emp.departmentId}"></td>
+		</tr>
+	</table>
+</body>
+</html>

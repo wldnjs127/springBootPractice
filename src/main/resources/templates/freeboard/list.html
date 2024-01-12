@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+@font-face {
+    font-family: 'Yeongdo-Rg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/Yeongdo-Rg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+ 	 font-family: 'Yeongdo-Rg';
+}
+
+table,th,tr,td{
+	padding : 10px;
+	border : 1px solid;
+	border-collapse : collapse;
+}
+.hotpink{
+	color: white;
+	background-color: red;
+}
+
+.skyblue{
+	color: white;
+	background-color: green;
+}
+.first{
+        color: gold;
+    }
+.last{
+       color: silver;
+   }
+  
+ a{
+ 	color: white;
+ }
+</style>
+</head>
+<body>
+	<h1>boardList</h1>
+	<h2 th:text="${@environment.getProperty('app.title')}"></h2>
+	<h2 th:text="${@environment.getProperty('server.port')}"></h2>
+	<!-- 지역변수선언 -->
+	<table th:with="target=${loginUser},friend=${myFriend}">
+		<tr>
+			<th>index-count-size</th>
+			<th>first,last,odd,even</th>
+			<th>글번호</th>
+			<th>제목</th>
+			<th>작성자</th>
+			<th>내용</th>
+			<th>등록일</th>
+			<th>수정일</th>
+			<th></th>
+			<th>댓글수</th>
+			<th>댓글수2</th>
+		</tr>
+		<tr th:each="board,status2:${blist}" 
+    		th:class="${status2.even?'hotpink':'skyblue'}">
+	        <td th:class="${status2.first?'first':status2.last?'last':''}" 
+	        	th:text="${status2.index + '--' +status2.count + '--' + status2.size}"></td>
+	        <td th:text="|${status2.first} ${status2.last} ${status2.even} ${status2.odd}|"></td>
+	        <td th:text="${board.bno}"></td>
+	        <td th:text="${board.title}"></td>
+	        <td th:text="${board.writer==target?'타겟찾음'+board.writer:board.writer}"></td>
+	        <td>
+	        	[[${board.bno}]]
+	        	[[${board.content}]]
+	        </td>
+	        <td th:text="${#dates.format(board.regdate,'yyyy-MM-dd')}"></td>
+	        <td th:text="${#dates.format(board.updatedate,'yyyy-MM-dd')}"></td>
+	        <td th:if="${board.writer}">
+	        	<p th:if="${board.writer==friend}"><a href="">수정</a></p>
+	        	<p th:unless="${board.writer==friend}">view</p> 
+			</td>
+			<td th:text="${board.replies.size}"></td>
+			<td th:text="${#lists.size(board.replies)}"></td>
+    	</tr>
+	</table>
+	<script th:inline="javascript">
+		var boardList = [[${blist}]];
+		boardList.forEach(item=>{
+			console.log(item);
+		});
+	</script>
+</body>
+</html>
