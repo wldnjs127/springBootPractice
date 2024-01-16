@@ -1,9 +1,12 @@
 package com.shinhan.sbproject.webBoard;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -27,7 +30,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Entity
 @Table(name = "tbl_webreplies")
-public class WebReply {
+public class WebReply  implements Serializable{
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)//oracle:sequence, mysql:identity
 	Long rno;
@@ -39,7 +42,8 @@ public class WebReply {
 	private Timestamp updatedate;
 	
 	//@JsonIgnore
-	//@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+	//해당필드는 오직 쓰려는 경우에만 접근이 허용
+	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
 	@ManyToOne(fetch = FetchType.LAZY) //lazy로 변경해도 OneToMany에서 Lazy가 그대로 수행~
 	//@JoinColumn(name="board_bno")
 	WebBoard board;

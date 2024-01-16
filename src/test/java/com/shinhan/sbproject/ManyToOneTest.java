@@ -1,7 +1,5 @@
 package com.shinhan.sbproject;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-
 import java.util.Arrays;
 import java.util.UUID;
 import java.util.stream.IntStream;
@@ -11,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.querydsl.core.BooleanBuilder;
-import com.shinhan.sbproject.VO.MemberDTO;
-import com.shinhan.sbproject.VO.MemberRole;
-import com.shinhan.sbproject.VO.ProfileDTO;
-import com.shinhan.sbproject.VO.QProfileDTO;
 import com.shinhan.sbproject.repository.MemberRepository;
 import com.shinhan.sbproject.repository.ProfileRepository;
+import com.shinhan.sbproject.vo.MemberDTO;
+import com.shinhan.sbproject.vo.MemberRole;
+import com.shinhan.sbproject.vo.ProfileDTO;
+import com.shinhan.sbproject.vo.QProfileDTO;
 
 import lombok.extern.slf4j.Slf4j;
 

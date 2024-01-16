@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import com.shinhan.firstzone.repository.CarRepository;
-import com.shinhan.sbproject.VO.CarVO;
+import com.shinhan.sbproject.vo.CarVO;
 
 import lombok.extern.slf4j.Slf4j;
 

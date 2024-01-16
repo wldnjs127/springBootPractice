@@ -6,8 +6,10 @@
 
 </head>
 <body>
-	<div th:fragment="header2">
-		<h1>Header조각2입니다.</h1>
+	<div th:fragment="header2" onclick="window.location.href='/webboard/list.do'">
+		<h1>크리스마스까지 D-358</h1>
+		
+		<p>[[${session.user!=null?session.user.mname+'님 환영합니다.':'mname이 없습니다.'}]]</p>
 	</div>
 	<div th:fragment="header3">
 		<h1>Header조각3입니다.</h1>

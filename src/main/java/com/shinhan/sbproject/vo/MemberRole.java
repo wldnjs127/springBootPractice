@@ -1,4 +1,4 @@
-package com.shinhan.sbproject.VO;
+package com.shinhan.sbproject.vo;
 
 public enum MemberRole {
 	USER, ADMIN, MANAGER;

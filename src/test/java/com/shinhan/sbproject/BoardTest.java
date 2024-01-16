@@ -13,8 +13,8 @@ import org.springframework.data.domain.Pageable;
 
 import com.querydsl.core.BooleanBuilder;
 import com.shinhan.firstzone.repository.BoardReposoitory;
-import com.shinhan.sbproject.VO.BoardVO;
-import com.shinhan.sbproject.VO.QBoardVO;
+import com.shinhan.sbproject.vo.BoardVO;
+import com.shinhan.sbproject.vo.QBoardVO;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

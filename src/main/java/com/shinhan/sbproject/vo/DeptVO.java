@@ -1,4 +1,4 @@
-package com.shinhan.sbproject.VO;
+package com.shinhan.sbproject.vo;
 
 import java.sql.Timestamp;
 

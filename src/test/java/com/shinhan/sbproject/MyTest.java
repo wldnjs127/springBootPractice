@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import com.shinhan.firstzone.repository.CarRepository;
-import com.shinhan.sbproject.VO.CarVO;
+import com.shinhan.sbproject.vo.CarVO;
 
 import lombok.extern.slf4j.Slf4j;
 

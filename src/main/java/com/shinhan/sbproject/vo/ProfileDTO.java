@@ -1,4 +1,4 @@
-package com.shinhan.sbproject.VO;
+package com.shinhan.sbproject.vo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

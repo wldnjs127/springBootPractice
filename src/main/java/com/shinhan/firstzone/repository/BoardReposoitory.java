@@ -9,7 +9,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 
-import com.shinhan.sbproject.VO.BoardVO;
+import com.shinhan.sbproject.vo.BoardVO;
 
 //CrudRepository 상속벋은 PagingAndSortingRepository
 //1. 기본 crud 작업 -> CrudRepository 상속 => 가능한 것 : findAll,findById, deleteById, save, count

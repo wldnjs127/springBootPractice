@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.shinhan.sbproject.VO.DeptVO;
+import com.shinhan.sbproject.vo.DeptVO;
 
 
 //1. CrudRepository 상속 => 가능한 것 : findAll,findById, deleteById

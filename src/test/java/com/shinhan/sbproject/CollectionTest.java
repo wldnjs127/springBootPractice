@@ -7,9 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.shinhan.sbproject.VO.MemberRole;
 import com.shinhan.sbproject.VO4.EnumTypeVO;
 import com.shinhan.sbproject.repository.composite.EnumTypeRepository;
+import com.shinhan.sbproject.vo.MemberRole;
 
 import lombok.extern.slf4j.Slf4j;
 

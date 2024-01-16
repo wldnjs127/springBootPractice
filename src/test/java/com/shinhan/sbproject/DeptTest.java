@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.shinhan.sbproject.VO.DeptVO;
 import com.shinhan.sbproject.repository.DeptRepository;
+import com.shinhan.sbproject.vo.DeptVO;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

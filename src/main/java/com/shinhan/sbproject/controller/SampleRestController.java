@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.shinhan.firstzone.repository.BoardReposoitory;
-import com.shinhan.sbproject.VO.CarVO;
+import com.shinhan.sbproject.vo.CarVO;
 
 @RestController
 public class SampleRestController {

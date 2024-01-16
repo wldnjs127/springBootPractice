@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import org.springframework.data.repository.CrudRepository;
 
-import com.shinhan.sbproject.VO.MemberDTO;
-import com.shinhan.sbproject.VO.ProfileDTO;
+import com.shinhan.sbproject.vo.MemberDTO;
+import com.shinhan.sbproject.vo.ProfileDTO;
 
 public interface ProfileRepository extends CrudRepository<ProfileDTO, Long>
 	, QuerydslPredicateExecutor<ProfileDTO>{

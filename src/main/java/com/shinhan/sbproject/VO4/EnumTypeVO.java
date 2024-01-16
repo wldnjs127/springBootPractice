@@ -2,7 +2,7 @@ package com.shinhan.sbproject.VO4;
 
 import java.util.Set;
 
-import com.shinhan.sbproject.VO.MemberRole;
+import com.shinhan.sbproject.vo.MemberRole;
 
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.ElementCollection;
